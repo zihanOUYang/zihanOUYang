@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片放大选中</title>
+    <style>
+        .box {
+            width: 1000px;
+            height: 600px;
+            background-color: aqua;
+            margin: 50px auto;
+        }
+
+        .bigImg {
+            width: 50%;
+            height: 50%;
+            background-image: url(./1.jpg);
+            background-size: cover;
+            margin: auto;
+        }
+
+        #d01 {
+            margin-left: 250px;
+        }
+
+        .small {
+            width: 125px;
+            height: 15%;
+            margin-bottom: auto;
+            display: inline-block;
+            margin-right: -4px;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bigImg"></div>
+        <a href="#">
+            <div class="small" id="d01"></div>
+        </a>
+        <a href="#">
+            <div class="small"></div>
+        </a>
+        <a href="#">
+            <div class="small"></div>
+        </a>
+        <a href="#">
+            <div class="small"></div>
+        </a>
+    </div>
+    <script>
+        let smalls = document.querySelectorAll(".small");
+        let as = document.querySelectorAll("a");
+        let big = document.querySelector(".bigImg");
+
+        for (let i = 0; i < 4; i++) {
+            smalls[i].style.backgroundImage = `url(./${i + 1}.jpg)`
+
+            as[i].addEventListener('click', function () {
+                big.style.backgroundImage = `url(./${i + 1}.jpg)`;
+            })
+        }
+    </script>
+
+
+</body>
+
+
+</html>
